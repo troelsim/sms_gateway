@@ -2,9 +2,9 @@ defmodule Plivo.Client do
   require Logger
   use HTTPoison.Base
 
-  @auth_id "***REMOVED***"
-  @auth_token "***REMOVED***"
-  @source_number "***REMOVED***"
+  @auth_id Application.get_env(:sms_server, :plivo_auth_id)
+  @auth_token Application.get_env(:sms_server, :plivo_auth_token)
+  @source_number Application.get_env(:sms_server, :plivo_source_number)
   
   defp process_url(url) do
     "https://#{@auth_id}:#{@auth_token}@api.plivo.com/v1/Account/#{@auth_id}" <> url

@@ -21,6 +21,11 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
+config :sms_server,
+  plivo_auth_id: System.get_env("PLIVO_AUTH_ID"),
+  plivo_auth_token: System.get_env("PLIVO_AUTH_TOKEN"),
+  plivo_source_number: System.get_env("PLIVO_SOURCE_NUMBER")
+
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.
